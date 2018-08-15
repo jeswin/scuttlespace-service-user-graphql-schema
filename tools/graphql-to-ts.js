@@ -16,16 +16,16 @@ console.log(
             "IGraphQLResponseErrorLocation"
           ].includes(name)
         ) {
-          const newBody = body
-            .split("\n")
-            .map(              
-              x =>
-                x.includes("| null")
-                  ? x.replace(/\| null/g, "")
-                  : x
-            )
-            .join("\n");
-          return `export interface ${name} ${newBody} `;
+          // const newBody = body
+          //   .split("\n")
+          //   .map(              
+          //     x =>
+          //       x.includes("| null")
+          //         ? x.replace(/\| null/g, "")
+          //         : x
+          //   )
+          //   .join("\n");
+          return `export interface ${name} ${body} `;
         }
       }
     }

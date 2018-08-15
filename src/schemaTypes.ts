@@ -1,28 +1,28 @@
 export interface IQuery {
-  user: IScuttlespaceUserDTO;
+  user: IScuttlespaceUserDTO | null;
 }
 
 export interface IUserOnQueryArguments {
-  domain?: string;
-  username?: string;
+  domain?: string | null;
+  username?: string | null;
 }
 
 export interface IScuttlespaceUserDTO {
-  about: string;
-  domain: string;
+  about: string | null;
+  domain: string | null;
   enabled: boolean;
   externalId: string;
   pub: string;
   rowid: string;
   username: string;
-  permissions: Array<IPermissionDTO>;
+  permissions: Array<IPermissionDTO> | null;
 }
 
 export interface IPermissionDTO {
   rowid: string;
   assigner: IScuttlespaceUserDTO;
   assignee: IScuttlespaceUserDTO;
-  permissions: string;
+  permissions: string | null;
 }
 
 export interface IMutation {
@@ -30,7 +30,7 @@ export interface IMutation {
 }
 
 export interface ICreateOrRenameUserOnMutationArguments {
-  input?: ICreateOrRenameUserArgs;
+  input?: ICreateOrRenameUserArgs | null;
 }
 
 export interface ICreateOrRenameUserArgs {
