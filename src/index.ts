@@ -1,4 +1,4 @@
-import * as types from "./schema-types";
+import * as types from "./schemaTypes";
 
-export { default as schema } from "./schema";
+export { default as typeDefs } from "./typeDefs";
 export { types };

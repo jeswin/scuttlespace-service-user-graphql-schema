@@ -1,4 +1,4 @@
-const gqlSchema = require("../dist/schema");
+const gqlSchema = require("../dist/typeDefs");
 const fromSchema = require("@gql2ts/from-schema");
 
 console.log(
