@@ -18,10 +18,10 @@ console.log(
         ) {
           const newBody = body
             .split("\n")
-            .map(
+            .map(              
               x =>
                 x.includes("| null")
-                  ? x.replace(":", "?:").replace(/\| null/g, "")
+                  ? x.replace(/\| null/g, "")
                   : x
             )
             .join("\n");
