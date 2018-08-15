@@ -1,0 +1,21 @@
+{
+  "name": "scuttlespace-service-user-graphql-types",
+  "version": "0.0.1",
+  "author": "Jeswin Kumar<jeswinpk@agilehead.com>",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "license": "AGPL-1.0",
+  "dependencies": {
+    "@types/node": "^10.5.5"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/should": "^13.0.0",
+    "gql2ts": "^1.8.2",
+    "mocha": "5.2.0",
+    "should": "^13.2.3"
+  }
+}
