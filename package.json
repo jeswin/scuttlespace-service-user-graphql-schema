@@ -1,12 +1,9 @@
 {
   "name": "scuttlespace-service-user-graphql-schema",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Jeswin Kumar<jeswinpk@agilehead.com>",
   "main": "dist/index",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "./build.sh"
-  },
   "license": "AGPL-1.0",
   "dependencies": {
     "@types/node": "^10.5.5"
