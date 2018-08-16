@@ -16,16 +16,16 @@ console.log(
             "IGraphQLResponseErrorLocation"
           ].includes(name)
         ) {
-          // const newBody = body
-          //   .split("\n")
-          //   .map(              
-          //     x =>
-          //       x.includes("| null")
-          //         ? x.replace(/\| null/g, "")
-          //         : x
-          //   )
-          //   .join("\n");
-          return `export interface ${name} ${body} `;
+          const newBody = body
+            .split("\n")
+            .map(
+              x =>
+                x.includes("permissions: Array<IPermissionDTO> | null;")
+                  ? "permissions?: Array<IPermissionDTO> | null;"
+                  : x
+            )
+            .join("\n");
+          return `export interface ${name} ${newBody} `;
         }
       }
     }

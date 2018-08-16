@@ -15,7 +15,7 @@ export interface IScuttlespaceUserDTO {
   pub: string;
   rowid: string;
   username: string;
-  permissions: Array<IPermissionDTO> | null;
+  permissions?: Array<IPermissionDTO> | null;
 }
 
 export interface IPermissionDTO {
