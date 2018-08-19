@@ -1,12 +1,3 @@
-export interface IQuery {
-  user: IScuttlespaceUserDTO | null;
-}
-
-export interface IUserOnQueryArguments {
-  domain?: string | null;
-  username?: string | null;
-}
-
 export interface IScuttlespaceUserDTO {
   about: string | null;
   domain: string | null;
@@ -23,14 +14,6 @@ export interface IPermissionDTO {
   assigner: IScuttlespaceUserDTO;
   assignee: IScuttlespaceUserDTO;
   permissions: string | null;
-}
-
-export interface IMutation {
-  createOrRenameUser: string;
-}
-
-export interface ICreateOrRenameUserOnMutationArguments {
-  input?: ICreateOrRenameUserArgs | null;
 }
 
 export interface ICreateOrRenameUserArgs {

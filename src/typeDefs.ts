@@ -17,7 +17,7 @@ export default `
     permissions: String
   }
 
-  type Query {
+  extend type Query {
     user(domain: String, username: String): ScuttlespaceUserDTO
   }
 
@@ -27,7 +27,7 @@ export default `
     username: String!
   }
   
-  type Mutation {
+  extend type Mutation {
     createOrRenameUser(input: CreateOrRenameUserArgs): String!
   }
 `;
