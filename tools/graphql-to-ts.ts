@@ -1,14 +1,14 @@
-const gqlSchema = require("../dist/typeDefs");
-const fromSchema = require("@gql2ts/from-schema");
+import * as fromSchema from "@gql2ts/from-schema";
+import gqlSchema from "../src/typeDefs";
 
 console.log(
   fromSchema.schemaToInterfaces(
-    gqlSchema.default,
+    gqlSchema,
     {
       ignoreTypeNameDeclaration: true
     },
     {
-      interfaceBuilder(name, body) {
+      interfaceBuilder(name: string, body: string) {
         if (
           ![
             "IGraphQLResponseRoot",
