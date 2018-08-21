@@ -24,8 +24,7 @@ export default `
   }
 
   extend type Query {
-    user(domain: String, username: String): ScuttlespaceUserDTO
-    getUsernameAvailability(username: String!): 
+    user(domain: String, externalId: String, username: String): ScuttlespaceUserDTO
   }
 
   input CreateOrRenameUserArgs {
@@ -44,8 +43,8 @@ export default `
   
   extend type Mutation {
     createOrRenameUser(input: CreateOrRenameUserArgs): String!
-    enableUser(input: EnableUserArgs): ChangeUserStatusResult!
-    disableUser(input: EnableUserArgs): ChangeUserStatusResult!
-    destroyUser(input: EnableUserArgs): ChangeUserStatusResult!
+    enableUser(input: ChangeUserStatusArgs): ChangeUserStatusResult!
+    disableUser(input: ChangeUserStatusArgs): ChangeUserStatusResult!
+    destroyUser(input: ChangeUserStatusArgs): ChangeUserStatusResult!
   }
 `;
