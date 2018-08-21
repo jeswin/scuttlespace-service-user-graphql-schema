@@ -17,8 +17,15 @@ export default `
     permissions: String
   }
 
+  enum UserStatusEnum {
+    AVAILABLE,
+    TAKEN,
+    OWN
+  }
+
   extend type Query {
     user(domain: String, username: String): ScuttlespaceUserDTO
+    getUsernameAvailability(username: String!): 
   }
 
   input CreateOrRenameUserArgs {
@@ -26,8 +33,19 @@ export default `
     pub: String!
     username: String!
   }
+
+  input ChangeUserStatusArgs {
+    externalId: String!
+  }
+
+  type ChangeUserStatusResult {
+    username: String!
+  }
   
   extend type Mutation {
     createOrRenameUser(input: CreateOrRenameUserArgs): String!
+    enableUser(input: EnableUserArgs): ChangeUserStatusResult!
+    disableUser(input: EnableUserArgs): ChangeUserStatusResult!
+    destroyUser(input: EnableUserArgs): ChangeUserStatusResult!
   }
 `;
