@@ -1,5 +1,5 @@
 import * as fromSchema from "@gql2ts/from-schema";
-import gqlSchema from "../src/typeDefs";
+import gqlSchema from "../../src/schema/types";
 
 console.log(
   fromSchema.schemaToInterfaces(
