@@ -28,6 +28,10 @@ export interface ICreateOrRenameUserArgs {
   username: string;
 }
 
+export interface ICreateOrRenameUserResult {
+  status: string;
+}
+
 export interface IChangeUserStatusArgs {
   externalId: string;
 }
