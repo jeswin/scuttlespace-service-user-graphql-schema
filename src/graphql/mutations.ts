@@ -1,18 +1,22 @@
-export default {
-  createOrRenameUser: {
+export default [
+  {
+    name: "createOrRenameUser",
     params: [["input", "CreateOrRenameUserArgs"]],
     returnType: "CreateOrRenameUserResult!"
   },
-  destroyUser: {
+  {
+    name: "destroyUser",
     params: [["input", "ChangeUserStatusArgs"]],
     returnType: "ChangeUserStatusResult!"
   },
-  disableUser: {
+  {
+    name: "disableUser",
     params: [["input", "ChangeUserStatusArgs"]],
     returnType: "ChangeUserStatusResult!"
   },
-  enableUser: {
+  {
+    name: "enableUser",
     params: [["input", "ChangeUserStatusArgs"]],
     returnType: "ChangeUserStatusResult!"
   }
-};
+];

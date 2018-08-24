@@ -1,5 +1,6 @@
-export default {
-  user: {
+export default [
+  {
+    name: "user",
     params: [
       ["domain", "String"],
       ["externalId", "String"],
@@ -7,4 +8,4 @@ export default {
     ],
     returnType: "ScuttleSpaceDTO"
   }
-};
+];
