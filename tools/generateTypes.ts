@@ -1,3 +1,4 @@
-import codegen from "graphql-to-ts";
+import * as codegen from "graphql-to-ts";
+import { schema } from "../src";
 
-console.log(codegen.generateTypes())
+console.log(codegen.generateTypes(schema));
