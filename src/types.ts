@@ -1,3 +1,9 @@
+export enum UserStatusEnum {
+  AVAILABLE,
+  TAKEN,
+  OWN
+}
+
 export interface IScuttlespaceUserDTO {
   about?: string | null;
   domain?: string | null;
@@ -14,12 +20,6 @@ export interface IPermissionDTO {
   assigner: IScuttlespaceUserDTO;
   assignee: IScuttlespaceUserDTO;
   permissions?: string | null;
-}
-
-export enum UserStatusEnum {
-  AVAILABLE,
-  TAKEN,
-  OWN
 }
 
 export interface ICreateOrRenameUserArgs {
