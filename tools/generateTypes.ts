@@ -4,7 +4,7 @@ import {
   ITSInterfaceDefinition
 } from "graphql-to-ts/dist/types";
 import prettier = require("prettier");
-import { schema } from "../src";
+import schema from "../src/schema";
 
 function generateEnums(enums: ITSEnumDefinition[]) {
   return enums.map(

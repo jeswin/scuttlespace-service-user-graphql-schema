@@ -1,1 +1,2 @@
-export { default as schema } from "./schema";
+export { default } from "./schema";
+export * from "./types";
