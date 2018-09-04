@@ -21,7 +21,7 @@ function generateInterfaces(interfaces: ITSInterfaceDefinition[]) {
     .map(
       i => `
     export interface ${i.name} {
-      ${i.fields.map(f => `${f.name}: ${f.type};`).join("")}
+      ${i.fields.map(f => `${f.name}${f.nullable ? "?" : ""}: ${f.type};`).join("")}
     }
     `
     )
