@@ -1,25 +1,26 @@
-export enum UserStatusEnum {
-  AVAILABLE,
-  TAKEN,
-  OWN
+export enum CreateOrRenameUserStatus {
+  Created,
+  Own,
+  Renamed,
+  Taken
 }
 
-export interface IScuttlespaceUserDTO {
-  about?: string | null;
-  domain?: string | null;
+export interface IScuttlespaceUser {
+  about: string | undefined;
+  domain: string | undefined;
   enabled: boolean;
   externalId: string;
   pub: string;
   rowid: string;
   username: string;
-  permissions?: [IPermissionDTO | null] | null;
+  permissions: [IPermission | undefined] | undefined;
 }
 
-export interface IPermissionDTO {
+export interface IPermission {
   rowid: string;
-  assigner: IScuttlespaceUserDTO;
-  assignee: IScuttlespaceUserDTO;
-  permissions?: string | null;
+  assigner: IScuttlespaceUser;
+  assignee: IScuttlespaceUser;
+  permissions: string | undefined;
 }
 
 export interface ICreateOrRenameUserArgs {
@@ -29,7 +30,8 @@ export interface ICreateOrRenameUserArgs {
 }
 
 export interface ICreateOrRenameUserResult {
-  status: string;
+  externalId: string;
+  status: CreateOrRenameUserStatus;
 }
 
 export interface IChangeUserStatusArgs {

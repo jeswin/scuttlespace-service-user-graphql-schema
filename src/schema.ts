@@ -1,5 +1,5 @@
 export default `
-  type ScuttlespaceUserDTO {
+  type ScuttlespaceUser {
     about: String
     domain: String
     enabled: Boolean!
@@ -7,24 +7,25 @@ export default `
     pub: String!
     rowid: ID!
     username: String!
-    permissions: [PermissionDTO]
+    permissions: [Permission]
   }
 
-  type PermissionDTO {
+  type Permission {
     rowid: ID!
-    assigner: ScuttlespaceUserDTO!
-    assignee: ScuttlespaceUserDTO!
+    assigner: ScuttlespaceUser!
+    assignee: ScuttlespaceUser!
     permissions: String
   }
 
-  enum UserStatusEnum {
-    AVAILABLE,
-    TAKEN,
-    OWN
+  enum CreateOrRenameUserStatus {
+    Created,
+    Own,
+    Renamed,
+    Taken
   }
 
   extend type Query {
-    user(domain: String, externalId: String, username: String): ScuttlespaceUserDTO
+    user(domain: String, externalId: String, username: String): ScuttlespaceUser
   }
 
   input CreateOrRenameUserArgs {
@@ -34,7 +35,8 @@ export default `
   }
 
   type CreateOrRenameUserResult {
-    status: String!
+    externalId: String!
+    status: CreateOrRenameUserStatus!
   }
 
   input ChangeUserStatusArgs {
@@ -46,9 +48,9 @@ export default `
   }
 
   extend type Mutation {
-    createOrRenameUser(input: CreateOrRenameUserArgs): CreateOrRenameUserResult!
-    enableUser(input: ChangeUserStatusArgs): ChangeUserStatusResult!
-    disableUser(input: ChangeUserStatusArgs): ChangeUserStatusResult!
-    destroyUser(input: ChangeUserStatusArgs): ChangeUserStatusResult!
+    createOrRenameUser(input: CreateOrRenameUserArgs!): CreateOrRenameUserResult!
+    enableUser(input: ChangeUserStatusArgs!): ChangeUserStatusResult!
+    disableUser(input: ChangeUserStatusArgs!): ChangeUserStatusResult!
+    destroyUser(input: ChangeUserStatusArgs!): ChangeUserStatusResult!
   }
 `;
