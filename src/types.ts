@@ -1,8 +1,8 @@
 export enum CreateOrRenameUserStatus {
-  Created,
-  Own,
-  Renamed,
-  Taken
+  Created = "Created",
+  Own = "Own",
+  Renamed = "Renamed",
+  Taken = "Taken"
 }
 
 export interface IScuttlespaceUser {
@@ -13,7 +13,7 @@ export interface IScuttlespaceUser {
   pub: string;
   rowid: string;
   username: string;
-  permissions: [IPermission | undefined] | undefined;
+  permissions: (IPermission | undefined)[] | undefined;
 }
 
 export interface IPermission {

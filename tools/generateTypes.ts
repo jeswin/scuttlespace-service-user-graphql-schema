@@ -10,7 +10,7 @@ function generateEnums(enums: ITSEnumDefinition[]) {
   return enums.map(
     e => `
     export enum ${e.name} {
-      ${e.values.join(",")}
+      ${e.values.map(v => `${v}="${v}"`).join(",")}
     }
     `
   );
