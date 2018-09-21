@@ -1,12 +1,9 @@
 import * as codegen from "graphql-to-ts";
-import {
-  ITSEnumDefinition,
-  ITSInterfaceDefinition
-} from "graphql-to-ts/dist/types";
+import { ITSEnum, ITSInterface } from "graphql-to-ts/dist/types";
 import prettier = require("prettier");
 import schema from "../src/schema";
 
-function generateEnums(enums: ITSEnumDefinition[]) {
+function generateEnums(enums: ITSEnum[]) {
   return enums.map(
     e => `
     export enum ${e.name} {
@@ -16,12 +13,14 @@ function generateEnums(enums: ITSEnumDefinition[]) {
   );
 }
 
-function generateInterfaces(interfaces: ITSInterfaceDefinition[]) {
+function generateInterfaces(interfaces: ITSInterface[]) {
   return interfaces
     .map(
       i => `
     export interface ${i.name} {
-      ${i.fields.map(f => `${f.name}: ${f.type};`).join("")}
+      ${i.fields
+        .map(f => `${f.name}: ${codegen.typeToString(f.type)};`)
+        .join("")}
     }
     `
     )
