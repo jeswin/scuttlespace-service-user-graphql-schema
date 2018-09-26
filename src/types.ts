@@ -6,21 +6,21 @@ export enum CreateOrRenameUserStatus {
 }
 
 export interface IScuttlespaceUser {
-  about: string | undefined;
-  domain: string | undefined;
+  about: string | null;
+  domain: string | null;
   enabled: boolean;
   externalId: string;
   pub: string;
   rowid: string;
   username: string;
-  permissions: (IPermission | undefined)[] | undefined;
+  permissions: (IPermission | null)[] | null;
 }
 
 export interface IPermission {
   rowid: string;
   assigner: IScuttlespaceUser;
   assignee: IScuttlespaceUser;
-  permissions: string | undefined;
+  permissions: string | null;
 }
 
 export interface ICreateOrRenameUserArgs {
